@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="w-full h-[100vh] bg-blend-soft-light flex justify-center items-center">
+        <div class="bg-black h-[65%] md:h-[65%] w-[95%] min-[450px]:w-[60%] min-[700px]:w-[40%] min-[1041px]:w-[30%] p-4 rounded-xl">
+            <div class=" font-bold text-white h-full w-full flex flex-col justify-center items-center gap-3 min-[1041px]:gap-5">
+                <div class="w-full h-[30%] border bg-white rounded-xl flex flex-col items-end justify-between">
+                    <div class="flex justify-start items-center font-bold text-gray-300 gap-4  text-xs md:text-sm p-1">
+                        <p id="plus-sign">+</p>
+                        <p id="minus-sign">-</p>
+                        <p id="mul-sign">x</p>
+                        <p id="div-sign">÷</p>
+                        <p id="percent-sign">%</p>
+                        <p id="pow-sign">^</p>
+                        <p id="inv-sign">⁻¹</p>
+                        <p id="root-sign">√</p>
+                        <p id="equal-sign">=</p>
+                    </div>
+                    <p class="text-black font-bold text-2xl md:text-3xl" id="screen"></p>
+                </div>
+                <div class="grid grid-cols-5 gap-3 w-full">
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="on">ON</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="pow">xⁿ</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="inv">x⁻¹</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="del">DEL</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="ac">AC</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="one">1</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="two">2</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="three">3</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="root">√x</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="percent">%</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="four">4</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="five">5</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="six">6</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="mul">X</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="div">/</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="seven">7</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="eight">8</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="nine">9</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="minus">-</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer row-span-2" id="plus">+</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="zero">0</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="point">.</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="ans">ans</button>
+                    <button class="border border-blue-200 p-2 rounded-sm cursor-pointer" id="equal">=</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
