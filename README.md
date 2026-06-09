@@ -21,7 +21,6 @@ A responsive normal calculator built using **HTML**, **Tailwind CSS**, and **Jav
 ### Additional Features
 
 * Repeated "=" operations
-* ANS button for recalling the previous answer
 * DEL button to remove the last digit
 * AC button to clear the current calculation
 * ON button to reset the calculator
