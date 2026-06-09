@@ -31,13 +31,14 @@ const inv_sign = document.getElementById("inv-sign");
 const percent_sign = document.getElementById("percent-sign");
 const equal_sign = document.getElementById("equal-sign");
 const root_sign = document.getElementById("root-sign");
-let ans = document.getElementById("ans");
+const dblzero = document.getElementById("dblzero");
 let number;
 let answer = 0;
 let operation;
 let ansExist = false;
 let repeat; // for repetative operations
 let isMul = false; // for percentage
+let onState = false; // for calculator on
 
 //function for remove sign 
 
@@ -60,6 +61,8 @@ one.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 1;
     else {
@@ -73,6 +76,8 @@ two.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 2;
     else {
@@ -87,6 +92,8 @@ three.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 3;
     else {
@@ -100,6 +107,8 @@ four.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 4;
     else {
@@ -113,6 +122,8 @@ five.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 5;
     else {
@@ -126,6 +137,8 @@ six.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 6;
     else {
@@ -139,6 +152,8 @@ seven.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 7;
     else {
@@ -152,6 +167,8 @@ eight.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 8;
     else {
@@ -165,6 +182,8 @@ nine.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 9;
     else {
@@ -178,6 +197,8 @@ zero.addEventListener("click", () => {
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
     }
+    if (screen.innerText === "" && !onState) return;
+
     if (screen.innerText != "0" && !ansExist)
         screen.innerText += 0;
     else {
@@ -186,8 +207,25 @@ zero.addEventListener("click", () => {
         repeat = undefined;
     }
 })
+dblzero.addEventListener("click", () => {
+
+    if (screen.innerText.length >= 12 && !ansExist) {
+        return;
+    }
+    if (screen.innerText === "" && !onState) return;
+
+    if (screen.innerText != "0" && !ansExist)
+        screen.innerText += "00";
+    else {
+        screen.innerText = "0";
+        ansExist = false;
+        repeat = undefined;
+    }
+})
 point.addEventListener("click", () => {
     if (screen.innerText.includes(".")) return;
+    if (screen.innerText === "" && !onState) return;
+
 
     if (screen.innerText.length >= 12 && !ansExist) {
         return;
@@ -201,19 +239,12 @@ point.addEventListener("click", () => {
     }
 })
 
-ans.addEventListener("click", () => {
-
-    if (ansExist || screen.innerText === "0") {
-        screen.innerText = answer;
-    } else {
-        screen.innerText += answer;
-    }
-
-});
 
 // all operators are working here
 
 plus.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     operation = "plus";
     resetOperators();
     plus_sign.style.color = "black";
@@ -222,6 +253,8 @@ plus.addEventListener("click", () => {
     screen.innerText = "";
 })
 minus.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     operation = "minus";
     resetOperators();
     minus_sign.style.color = "black";
@@ -230,6 +263,8 @@ minus.addEventListener("click", () => {
     screen.innerText = "";
 })
 mul.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     operation = "mul";
     resetOperators();
     mul_sign.style.color = "black";
@@ -239,6 +274,8 @@ mul.addEventListener("click", () => {
     screen.innerText = "";
 })
 div.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     operation = "div";
     resetOperators();
     div_sign.style.color = "black";
@@ -247,6 +284,8 @@ div.addEventListener("click", () => {
     screen.innerText = "";
 })
 pow.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     operation = "pow";
     resetOperators();
     pow_sign.style.color = "black";
@@ -255,6 +294,8 @@ pow.addEventListener("click", () => {
     screen.innerText = "";
 })
 percent.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     resetOperators();
     percent_sign.style.color = "black";
     if (!isMul) return;
@@ -267,6 +308,8 @@ percent.addEventListener("click", () => {
     answer = screen.innerText;
 })
 inv.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     console.log("pressed inverse");
     operation = "inverse";
     resetOperators();
@@ -278,6 +321,8 @@ inv.addEventListener("click", () => {
     ansExist = true;
 })
 root.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     console.log("pressed root");
     operation = "root";
     resetOperators();
@@ -297,9 +342,12 @@ on.addEventListener("click", () => {
     ansExist = false;
     repeat = undefined;
     answer = 0;
+    onState = true;
     resetOperators();
 })
 ac.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     console.log("clicked ac");
     screen.innerText = "0";
     number = null;
@@ -310,6 +358,8 @@ ac.addEventListener("click", () => {
     resetOperators();
 })
 del.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     console.log("del clicked");
     if (ansExist) return;
     screen.innerText = screen.innerText.slice(0, -1);
@@ -320,6 +370,8 @@ del.addEventListener("click", () => {
 // pressing equal work here 
 
 equal.addEventListener("click", () => {
+    if (screen.innerText === "" && !onState) return;
+
     resetOperators();
     equal_sign.style.color = "black";
 
